@@ -7,5 +7,6 @@ fruits[((cnt++))]="Watermelon";
 fruits[((cnt++))]="Grapes";
 fruits[((cnt++))]="Bananas";
 fruits[((cnt++))]="Oranges";
+fruits[((cnt++))]="Apple";
 
 echo ${fruits[@]};
