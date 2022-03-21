@@ -36,8 +36,8 @@ do
 		isPresent=$((RANDOM%3));
 	fi
 	wHour=$(getWorkingHour $isPresent);
-	dailyWage=$((wHour * WAGE_PER_HOUR));
-	totalSalary=$((totalSalary+dailyWage));
+	dailyWage[$day]=$((wHour * WAGE_PER_HOUR));
+	totalSalary=$((totalSalary+${dailyWage[day]}));
 	totalWorkingHour=$((totalWorkingHour+wHour));
 	((day++));
 done
@@ -45,3 +45,10 @@ done
 echo "Emplpoyee monthly wage : $"$totalSalary" USD";
 echo "Total Working Hour : "$totalWorkingHour;
 echo "Total working day : "$day;
+
+#echo ${dailyWage[@]};
+
+for ((i=0;i<${#dailyWage[@]};i++))
+do
+	echo "Day $i : $"${dailyWage[i]} "USD";
+done

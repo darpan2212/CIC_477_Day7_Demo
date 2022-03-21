@@ -10,3 +10,7 @@ fruits[((cnt++))]="Oranges";
 fruits[((cnt++))]="Apple";
 
 echo ${fruits[@]};
+
+echo ${fruits[1]};
+
+echo "Size of an array is  : " ${#fruits[@]}
